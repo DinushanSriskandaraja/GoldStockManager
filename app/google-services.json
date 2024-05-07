@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "941760297786",
+    "firebase_url": "https://goldstockmanager-default-rtdb.firebaseio.com",
+    "project_id": "goldstockmanager",
+    "storage_bucket": "goldstockmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941760297786:android:cc21d07847d1246464ee03",
+        "android_client_info": {
+          "package_name": "com.example.metaltracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941760297786-qh9cfj1srve48vl5mtrhjg61hp40nmpj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXMZodRdgk47sECK58gicrUCuvP5u6fTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941760297786-qh9cfj1srve48vl5mtrhjg61hp40nmpj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
