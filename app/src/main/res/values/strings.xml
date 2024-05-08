@@ -7,7 +7,7 @@
     <string name="txtPawn">Pawn</string>
     <string name="txtDes">Description</string>
     <string name="txtEmail">Email</string>
-    <string name="txtPw">Password</string>
+    <string name="txtPwTag">Password</string>
 
     <string name="txtLogIn">Log In</string>
 

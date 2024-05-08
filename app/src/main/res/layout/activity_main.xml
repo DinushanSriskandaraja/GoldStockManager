@@ -15,7 +15,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="@string/txtPw"
+        android:hint="@string/txtPwTag"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -43,12 +43,13 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="132dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="@string/txtEmail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
