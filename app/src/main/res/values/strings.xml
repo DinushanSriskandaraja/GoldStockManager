@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">MetalTracker</string>
-<!--    <string name="app_name">MetalTracker</string>-->
+    <string name="txtStock">Stocks</string>
     <string name="txtSell">Sell</string>
     <string name="txtBuy">Buy</string>
     <string name="txtPrice">Price</string>
     <string name="txtPawn">Pawn</string>
     <string name="txtDes">Description</string>
+<!--    <string name="txtDayPrice">Price</string>-->
+<!--    <string name="txt">Date</string>-->
+
     <string name="txtDate">Date</string>
     <string name="default_web_client_id">AIzaSyBXMZodRdgk47sECK58gicrUCuvP5u6fTU
 </string>

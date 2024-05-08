@@ -8,56 +8,115 @@
     tools:context=".MainMenuActivity">
 
     <Button
-        android:id="@+id/btnSellNav"
-        style="@style/CustomButtonStyle"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginEnd="16dp"
-        android:text="Sell"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnBuyNav"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="290dp" />
-
-    <Button
-        android:id="@+id/btnBuyNav"
-        style="@style/CustomButtonStyle"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="92dp"
-
-        android:text="Buy"
-        app:layout_constraintEnd_toStartOf="@+id/btnSellNav"
-        app:layout_constraintHorizontal_bias="0.295"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="@string/txtBuy"
-        app:layout_constraintBottom_toTopOf="@+id/btnSellNav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.50" />
-
-    <Button
         android:id="@+id/btnStock"
         style="@style/CustomButtonStyle"
-        android:layout_width="347dp"
         android:layout_height="65dp"
-        android:text="Stock"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/txtStock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSellNav"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="94dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:layout_marginTop="16sp"
+                android:text="Stock"
+                android:textAlignment="textStart" />
+
+            <TextView
+                android:id="@+id/lblOnHandStock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100g"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="244dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16sp"
+                android:text="Price"
+                android:textAlignment="textEnd" />
+
+            <TextView
+                android:id="@+id/lblDayPrice"
+                android:layout_width="226dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:text="Day Price"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="34sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="204dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/btnBuyNav"
+            style="@style/CustomButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/txtBuy"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnSellNav"
+            style="@style/CustomButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/txtSell"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
