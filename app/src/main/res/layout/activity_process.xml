@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProcessActivity">
+
     <EditText
         android:id="@+id/weight"
         android:layout_width="0dp"
@@ -14,8 +15,8 @@
         android:layout_marginTop="104dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
+        android:hint="@string/txtPawn"
         android:inputType="textPersonName"
-        android:text="@string/txtPawn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,8 +75,8 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
+        android:hint="@string/txtPrice"
         android:inputType="textPersonName"
-        android:text="@string/txtPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

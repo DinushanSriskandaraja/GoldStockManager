@@ -6,8 +6,10 @@
     <string name="txtPrice">Price</string>
     <string name="txtPawn">Pawn</string>
     <string name="txtDes">Description</string>
-<!--    <string name="txtDayPrice">Price</string>-->
-<!--    <string name="txt">Date</string>-->
+    <string name="txtEmail">Email</string>
+    <string name="txtPw">Password</string>
+
+    <string name="txtLogIn">Log In</string>
 
     <string name="txtDate">Date</string>
     <string name="default_web_client_id">AIzaSyBXMZodRdgk47sECK58gicrUCuvP5u6fTU
