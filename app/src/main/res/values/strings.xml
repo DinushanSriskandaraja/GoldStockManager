@@ -8,9 +8,12 @@
     <string name="txtDes">Description</string>
     <string name="txtEmail">Email</string>
     <string name="txtPwTag">Password</string>
-
     <string name="txtLogIn">Log In</string>
-
+    <string name="txtUsername">User Name</string>
+    <string name="txtShopName">Shop Name</string>
+    <string name="txtSave">Save</string>
+    <string name="txtProfile">Profile</string>
+    <string name="txtLogOut">Log Out</string>
     <string name="txtDate">Date</string>
     <string name="default_web_client_id">AIzaSyBXMZodRdgk47sECK58gicrUCuvP5u6fTU
 </string>

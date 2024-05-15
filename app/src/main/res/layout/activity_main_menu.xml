@@ -119,4 +119,34 @@
             tools:ignore="MissingConstraints" />
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStock">
+
+        <Button
+            android:id="@+id/btnProfileNav"
+            style="@style/CustomButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:text="@string/txtProfile" />
+
+        <Button
+            android:id="@+id/btnLogOut"
+            style="@style/CustomButtonStyle"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:text="@string/txtLogOut" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
