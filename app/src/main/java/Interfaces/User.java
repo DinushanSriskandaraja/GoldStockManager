@@ -1,4 +1,4 @@
-package Models;
+package Interfaces;
 
 public class User {
     public String email;

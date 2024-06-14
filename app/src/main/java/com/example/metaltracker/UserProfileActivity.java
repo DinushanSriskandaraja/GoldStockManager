@@ -14,8 +14,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.metaltracker.databinding.ActivityUserProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +31,6 @@ public class UserProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         binding=ActivityUserProfileBinding.inflate(getLayoutInflater());
-
         // Initialize Firebase Database reference
         mDatabase = FirebaseDatabase.getInstance().getReference();
         setContentView(binding.getRoot());
@@ -40,6 +41,38 @@ public class UserProfileActivity extends AppCompatActivity {
         txtEmail=binding.txtEmailInput;
         String userMail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         txtEmail.setText(userMail);
+        getUserProfileData();
+    }
+    private void getUserProfileData(){
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+        // Reference to the user's data in the database
+        DatabaseReference userRef = mDatabase.child("users").child(userId);
+
+        // Add a listener to fetch data
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Check if user data exists
+                if (dataSnapshot.exists()) {
+                    // Get user data from dataSnapshot
+                    String username = dataSnapshot.child("username").getValue(String.class);
+                    String shopName = dataSnapshot.child("shopName").getValue(String.class);
+
+                    // Set the data to EditText fields
+                    txtUname.setText(username);
+                    txtShopName.setText(shopName);
+                } else {
+//                    Toast.makeText(UserProfileActivity.this, "User data not found", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(UserProfileActivity.this, "Failed to load user data", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void saveProfileData(View view) {

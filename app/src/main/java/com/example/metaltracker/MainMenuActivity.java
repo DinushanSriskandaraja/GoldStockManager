@@ -24,6 +24,7 @@ public class MainMenuActivity extends AppCompatActivity {
         FirebaseApp.initializeApp(this);
         binding=ActivityMainMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        gettStockData();
         binding.btnSellNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,5 +71,8 @@ public class MainMenuActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void gettStockData() {
     }
 }
