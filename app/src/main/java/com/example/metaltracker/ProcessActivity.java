@@ -71,6 +71,13 @@ public class ProcessActivity extends AppCompatActivity {
                 }
             });
         }
+        binding.btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ProcessActivity.this, MainMenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void buyGold() {
         double price = Double.parseDouble(priceRate.getText().toString().trim());

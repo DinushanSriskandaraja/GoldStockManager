@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         txtMail = binding.txtMail;
         txtPw = binding.txtPw;
         Button btnlogin = binding.btnLogin;
+        Button btnRegister = binding.btnRegister;
+
         // Initialize views
         btnlogin.setOnClickListener(view -> {
             // Check if txtMail and txtPw are not null
@@ -47,6 +49,26 @@ public class MainActivity extends AppCompatActivity {
                 String password = txtPw.getText().toString().trim();
                 if (!email.isEmpty() && !password.isEmpty()) {
                     signIn(email, password);
+                } else {
+                    Toast.makeText(MainActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(MainActivity.this, "Text fields are not initialized", Toast.LENGTH_SHORT).show();
+            }
+        });
+        // Apply window insets listener for system bars
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+        btnRegister.setOnClickListener(view -> {
+            // Check if txtMail and txtPw are not null
+            if (txtMail != null && txtPw != null) {
+                String email = txtMail.getText().toString().trim();
+                String password = txtPw.getText().toString().trim();
+                if (!email.isEmpty() && !password.isEmpty()) {
+                    signUp(email, password);
                 } else {
                     Toast.makeText(MainActivity.this, "Please enter email and password", Toast.LENGTH_SHORT).show();
                 }

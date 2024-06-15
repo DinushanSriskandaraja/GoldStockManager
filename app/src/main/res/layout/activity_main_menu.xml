@@ -54,10 +54,11 @@
                 android:id="@+id/lblOnHandStock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="100g"
+                android:layout_marginTop="10dp"
+                android:text="100.44g"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="34sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout

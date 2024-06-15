@@ -15,6 +15,6 @@
     <string name="txtProfile">Profile</string>
     <string name="txtLogOut">Log Out</string>
     <string name="txtDate">Date</string>
-    <string name="default_web_client_id">AIzaSyBXMZodRdgk47sECK58gicrUCuvP5u6fTU
-</string>
+    <string name="txtRegister">Register</string>
+    <string name="default_web_client_id">AIzaSyBXMZodRdgk47sECK58gicrUCuvP5u6fTU</string>
 </resources>

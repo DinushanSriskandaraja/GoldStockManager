@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -13,6 +14,13 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.metaltracker.databinding.ActivityMainMenuBinding;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import Models.User;
 
 public class MainMenuActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -25,6 +33,7 @@ public class MainMenuActivity extends AppCompatActivity {
         binding=ActivityMainMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         gettStockData();
+
         binding.btnSellNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,8 +80,48 @@ public class MainMenuActivity extends AppCompatActivity {
                 finish();
             }
         });
+        binding.btnStock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainMenuActivity.this, TransactionHistoryActivity.class);
+
+                // Put extra parameters using key-value pairs
+                boolean paramValue = false;
+                intent.putExtra("USER_ID", mAuth.getUid());
+
+                // Start the activity with the Intent you just created
+                startActivity(intent);
+            }
+        });
     }
 
+
     private void gettStockData() {
+        String uid=mAuth.getUid();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference()
+                .child("users")
+                .child(uid)
+                .child("stock");
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    // Assuming stock is stored as a single value (e.g., total stock count)
+                    double stock = dataSnapshot.getValue(Double.class)*8;
+
+                    // Now you can use the 'stock' value as needed
+                    // Example: Display in TextView or perform further operations
+                    binding.lblOnHandStock.setText(String.valueOf(stock)+"g");
+                } else {
+                    binding.lblOnHandStock.setText(0);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle potential errors
+                //Log.e("StockData", "Failed to retrieve stock data", databaseError.toException());
+            }
+        });
     }
 }

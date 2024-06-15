@@ -1,5 +1,6 @@
 package com.example.metaltracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -7,9 +8,6 @@ import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.metaltracker.databinding.ActivityUserProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -92,5 +90,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
         mDatabase.child("users").child(userId).setValue(userData);
 
+    }
+    public void navBack(View view) {
+        Intent intent = new Intent(UserProfileActivity.this, MainMenuActivity.class);
+        startActivity(intent);
     }
 }
