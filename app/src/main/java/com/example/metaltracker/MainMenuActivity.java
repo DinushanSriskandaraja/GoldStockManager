@@ -4,12 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.metaltracker.databinding.ActivityMainMenuBinding;
 import com.google.firebase.FirebaseApp;
@@ -19,8 +15,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import Models.User;
 
 public class MainMenuActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -112,9 +106,9 @@ public class MainMenuActivity extends AppCompatActivity {
 
                     // Now you can use the 'stock' value as needed
                     // Example: Display in TextView or perform further operations
-                    binding.lblOnHandStock.setText(String.valueOf(stock)+"g");
+                    binding.lblOnHandStock.setText(String.valueOf(stock));
                 } else {
-                    binding.lblOnHandStock.setText(0);
+                    binding.lblOnHandStock.setText(String.valueOf(0));
                 }
             }
             @Override
