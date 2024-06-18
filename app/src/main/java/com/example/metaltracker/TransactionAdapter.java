@@ -1,11 +1,11 @@
 package com.example.metaltracker;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -82,13 +82,14 @@ public class TransactionAdapter extends RecyclerView.Adapter {
             ((BuyViewHolder) holder).priceView.setText(String.valueOf(buy.getPrice()));
             ((BuyViewHolder) holder).weightView.setText(String.valueOf(buy.getWeight()));
             ((BuyViewHolder) holder).disView.setText(String.valueOf(buy.getDescription()));
-
+            ((BuyViewHolder) holder).priceView.setTextColor(Color.GREEN);
         } else {
             Sell sell = (Sell) transactionList.get(position);
             ((SellViewHolder) holder).dateView.setText(sell.getDate());
             ((SellViewHolder) holder).priceView.setText(String.valueOf(sell.getPrice()));
             ((SellViewHolder) holder).weightView.setText(String.valueOf(sell.getWeight()));
             ((SellViewHolder) holder).disView.setText(sell.getDescription());
+            ((SellViewHolder) holder).priceView.setTextColor(Color.RED);
         }
     }
 
