@@ -6,21 +6,21 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/_asset_2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/_asset_4"
         android:supportsRtl="true"
         android:theme="@style/Theme.MetalTracker"
         tools:targetApi="31">
         <activity
             android:name=".TransactionHistoryActivity"
             android:exported="false" />
-        <activity
-            android:name=".stockHistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StockHistoryActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".stockHistoryActivity"-->
+<!--            android:exported="false" />-->
+<!--        <activity-->
+<!--            android:name=".StockHistoryActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".UserProfileActivity"
             android:exported="false" />
